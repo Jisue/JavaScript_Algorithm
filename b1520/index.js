@@ -8,6 +8,13 @@ if (N === 0) {
       return;
     }
     input.push(line.split(" ").map((v) => parseInt(v)));
+
+     if (!N && !L) {
+      [N, L] = line.split(" ").map((v) => parseInt(v));
+      return;
+    }
+    const [len, d] = line.split(" ").map((v) => parseInt(v));
+    input.push(d === 0 ? { st: 0, end: len, d } : { st: L - len, end: L, d });
 */
 
 // 항상 높이가 더 낮은 지점으로만 이동 가능
