@@ -8,8 +8,11 @@ let start = 0;
 let end = 0;
 let min = Number.MAX_VALUE;
 
+console.log(numArr);
+
 let sum = numArr[0];
 while(start < N && end < N) {
+    console.log("start: " + start + " end: " + end + " sum: " + sum);
     if(sum >= S) {
         if(min > end - start + 1) {
             min = end - start + 1;
