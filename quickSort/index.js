@@ -13,3 +13,8 @@ const quickSort = (arr) => {
 }
 
 quickSort(arr);
+
+// 객체 Sort
+const obj = { x: 5, y: 2, z: 3};
+let temp = Object.entries(obj).sort(([,a],[,b]) => a - b);
+console.log(Object.fromEntries(temp));
