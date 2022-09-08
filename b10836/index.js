@@ -4,7 +4,6 @@ const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 const input = fs.readFileSync(filePath).toString().split('\n');
 
 const [M, N] = input[0].split(" ").map(Number);
-const larva = Array.from({length: M}, () => Array(M).fill(1));
 const temp = Array.from({length: 2*M-1}, () => 1);
 
 for(let i=1;i<=N;i++) {
