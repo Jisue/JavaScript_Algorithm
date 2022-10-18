@@ -10,14 +10,10 @@ for(let i=1;i<input.length-1;i++) {
 }
 line.sort((a, b) => a[0] === b[0] ? a[1] - b[1] : a[0] - b[0]);
 
-let idx = 0;
-let end = 0;
-let cnt = 0;
-
-while(true) {
+const pickLine = (idx, cnt, end) => {
     let maxNum = -1;
 
-    for(;idx<line.length;idx++) {
+    while(idx < line.length) {
         const [s, e] = line[idx];
         if(s <= end) {
             if(e > maxNum) {
@@ -26,16 +22,19 @@ while(true) {
         } else {
             break;
         }
+        idx++;
     }
 
     if(maxNum === -1) {
         console.log(0);
-        break;
+        return;
     }
     cnt++;
     if(maxNum >= M) {
         console.log(cnt);
-        break;
+        return;
     }
-    end = maxNum;
+    pickLine(idx, cnt, maxNum)
 }
+
+pickLine(0, 0, 0);
